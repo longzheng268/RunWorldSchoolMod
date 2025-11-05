@@ -29,11 +29,35 @@
 
   > 这个目前作用不大，主要是去弹窗广告的备选方案
   
+## 编译
+
+项目已配置GitHub Actions自动编译工作流，每次推送代码到main/master分支或提交Pull Request时会自动编译。
+
+### 自动编译
+1. 推送代码到main或master分支
+2. 在GitHub仓库的Actions标签页查看编译进度
+3. 编译完成后，在Actions运行记录中下载生成的APK文件（app-release artifact）
+
+### 手动编译
+你也可以手动触发编译：
+1. 进入GitHub仓库的Actions标签页
+2. 选择"Android CI"工作流
+3. 点击"Run workflow"按钮
+
+### 本地编译
+如需本地编译，请确保已安装JDK 17和Android SDK：
+
+```bash
+git clone git@github.com:LiuYiGL/RunWorldSchoolMod.git
+cd RunWorldSchoolMod
+./gradlew assembleRelease
+```
+
+编译完成后，APK文件位于 `app/build/outputs/apk/release/app-release-unsigned.apk`
+
 ## 安装
 
 本项目仅进行开源处理，并不对使用者负责。且成果仅在内部使用，如需使用也可以自行`git clone`本仓库进行编译apk使用，切勿进行广泛流传。
-
-> git clone git@github.com:LiuYiGL/RunWorldSchoolMod.git
 
 ## 使用
 
